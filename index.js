@@ -1,42 +1,21 @@
-class Cliente{
-    constructor(nome, cpf, agencia, conta){
-        this.nome = nome
-        this.cpf = cpf
-        this.agencia = agencia
-        this.conta = conta
-    }
-    
-}
+import {Cliente} from "./Cliente.js"
+import {Conta} from "./Conta.js"
 
-class Conta{
-    constructor(agencia, numero, saldo){
-        this.agencia = agencia
-        this.numero = numero
-        this._saldo = saldo
-    }
+//Criando novo Cliente1
+const cliente1 = new Cliente("Paulo", 12345678901)
 
-    saque(valor){
-        this._saldo -= valor
-        return console.log(`Transação Aprovada!\nValor sacado: R$ ${valor}`)
-    }
+//Criando novo Cliente2
+const cliente2 = new Cliente("Eduardo", 98765432110)
 
-    deposito(valor){
-        this._saldo += valor
-        return console.log(`Valor Depositado: R$ ${valor} \nSaldo: R$ ${this._saldo}`)
-    }
+//Criando Conta1
+const conta1 = new Conta(1123, "12345-6",cliente1, 0)
+//conta1.deposito(200)
+//conta1.saldo()
+//conta1.saque(150)
+//conta1.saldo()
 
-    saldo(){
-        return console.log(`Saldo: R$ ${this._saldo}`)
-    }
-}
-
-//Criando novo Cliente
-const cliente1 = new Cliente("Paulo", 12345678901, 0001, 0)
-console.log(cliente1.nome)
-
-//Criando Conta
-const conta1 = new Conta(0001, "12345-6", 0)
-conta1.deposito(200)
+//Criando Conta2
+const conta2 = new Conta(1123, "3457-9", cliente2, 500)
 conta1.saldo()
-conta1.saque(150)
-conta1.saldo()
+conta2.saldo()
+conta2.transfere(200, conta1)
