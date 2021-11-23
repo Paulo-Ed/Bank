@@ -1,0 +1,20 @@
+{
+  "name": "bank",
+  "version": "1.0.0",
+  "description": "Pequeno sistema de banco criado em Javascript.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paulo-Ed/Bank.git"
+  },
+  "author": "Paulo-Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Paulo-Ed/Bank/issues"
+  },
+  "homepage": "https://github.com/Paulo-Ed/Bank#readme"
+}
