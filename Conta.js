@@ -1,5 +1,5 @@
-import {Cliente} from "./Cliente.js"
-export class Conta{
+import { Cliente } from "./Cliente.js"
+export class Conta {
     static totalContas = 0
     constructor(agencia, numero, cliente, saldo){
         this.agencia = agencia
@@ -38,7 +38,7 @@ export class Conta{
         return console.log(`Saldo: R$ ${this._saldo}`)
     }
 
-    transfere(valor, conta){
+    transferir(valor, conta){
         const valorTransferencia = this.saque(valor)
         conta.depositar(valorTransferencia) 
         console.log(`Valor: R$ ${valor} \nTransferência realizada com Sucesso!`)
