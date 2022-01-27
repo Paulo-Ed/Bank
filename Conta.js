@@ -4,6 +4,11 @@ export class Conta {
     static totalContas = 0
 
     constructor(agencia, numero, cliente, saldo){
+
+        if(this.constructor == Conta) {
+            throw new Error("Essa é uma classe abstrata, então não deve ser instanciada diretamente!")
+        }
+
         this.agencia = agencia
         this.numero = numero
         this._cliente = cliente
@@ -25,9 +30,9 @@ export class Conta {
         return this._saldo
     }
 
+    //Método abstrato
     sacar(valor){
-        let taxa = 1
-        return this._sacar(valor, taxa)//Utilizando método privado
+        throw new Error("Esse método é abstrato e não deve ser acessado diretamente!")
     }
 
     _sacar(valor, taxa) { //Método Privado
