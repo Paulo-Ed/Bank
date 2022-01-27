@@ -1,6 +1,8 @@
 import { Cliente } from "./Cliente.js"
 export class Conta {
+
     static totalContas = 0
+
     constructor(agencia, numero, cliente, saldo){
         this.agencia = agencia
         this.numero = numero
@@ -13,7 +15,6 @@ export class Conta {
         if(novoValor instanceof Cliente){
             this._cliente = novoValor
         }
-        
     }
 
     get cliente(){
@@ -24,9 +25,18 @@ export class Conta {
         return this._saldo
     }
 
-    saque(valor){
-        this._saldo -= valor
-        return valor
+    sacar(valor){
+        let taxa = 1
+        return this._sacar(valor, taxa)//Utilizando método privado
+    }
+
+    _sacar(valor, taxa) { //Método Privado
+        const valorSacado = taxa * valor
+        if(this._saldo >= valorSacado) {
+            this._saldo -= valorSacado
+            return console.log(`Valor sacado: R$ ${valorSacado}`)
+        }
+        return 0
     }
 
     depositar(valor){
