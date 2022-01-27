@@ -13,4 +13,8 @@ export class Funcionario {
     cadastrarSenha(senha) {
         this._senha = senha
     }
+
+    get senha() {
+        return this._senha
+    }
 }
